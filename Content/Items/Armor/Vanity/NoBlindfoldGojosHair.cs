@@ -4,6 +4,7 @@ using Terraria.ModLoader;
 
 namespace NeviliscoVanity.Content.Items.Armor.Vanity
 {
+    [AutoloadEquip(EquipType.Head)]
     public class NoBlindfoldGojosHair : ModItem
     {
         public override string Texture => GetAssetPath("Armor", Name);
