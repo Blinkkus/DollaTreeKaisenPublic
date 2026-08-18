@@ -18,73 +18,77 @@ namespace NeviliscoVanity.Core.Systems;
 public class RecipeSystem : ModSystem
 {
     public override void AddRecipes()
-    {
-        List<int> items = new List<int>();
+{
+    // Shorthand
+    static int ItemType<T>() where T : ModItem => ModContent.ItemType<T>();
 
+    List<int> items = new List<int>()
+    {
         // Gojo
-        items.Add(ModContent.ItemType<BlindfoldGojosHair>());
-        items.Add(ModContent.ItemType<NoBlindfoldGojosHair>());
-        items.Add(ModContent.ItemType<GojosHair>());
-        items.Add(ModContent.ItemType<GojosShirt>());
-        items.Add(ModContent.ItemType<GojosPants>());
-        
+        ItemType<BlindfoldGojosHair>(),
+        ItemType<NoBlindfoldGojosHair>(),
+        ItemType<GojosHair>(),
+        ItemType<GojosShirt>(),
+        ItemType<GojosPants>(),
+
         // Ino
-        items.Add(ModContent.ItemType<InosBeanie>());
-        items.Add(ModContent.ItemType<InosShiestyHelmet>());
-        items.Add(ModContent.ItemType<InosShiestyAccessory>());
-        items.Add(ModContent.ItemType<InosHair>());
-        items.Add(ModContent.ItemType<InosShirt>());
-        items.Add(ModContent.ItemType<InosPants>());
+        ItemType<InosBeanie>(),
+        ItemType<InosShiestyHelmet>(),
+        ItemType<InosShiestyAccessory>(),
+        ItemType<InosHair>(),
+        ItemType<InosShirt>(),
+        ItemType<InosPants>(),
 
         // Past Geto
-        items.Add(ModContent.ItemType<PastGetosHair>());
-        items.Add(ModContent.ItemType<PastGetosShirt>());
-        items.Add(ModContent.ItemType<PastGetosPants>());
+        ItemType<PastGetosHair>(),
+        ItemType<PastGetosShirt>(),
+        ItemType<PastGetosPants>(),
 
         // Past Gojo
-        items.Add(ModContent.ItemType<PastGojosHair>());
-        items.Add(ModContent.ItemType<PastGojosShirt>());
-        items.Add(ModContent.ItemType<PastGojosPants>());
-        items.Add(ModContent.ItemType<PastGojosGlasses>());
+        ItemType<PastGojosHair>(),
+        ItemType<PastGojosShirt>(),
+        ItemType<PastGojosPants>(),
+        ItemType<PastGojosGlasses>(),
 
         // Sukuna
-        items.Add(ModContent.ItemType<SukunasHair>());
-        items.Add(ModContent.ItemType<SukunasShirt>());
-        items.Add(ModContent.ItemType<SukunasPants>());
-        items.Add(ModContent.ItemType<EightHandledWheel>());
+        ItemType<SukunasHair>(),
+        ItemType<SukunasShirt>(),
+        ItemType<SukunasPants>(),
+        ItemType<EightHandledWheel>(),
 
         // Toji
-        items.Add(ModContent.ItemType<TojisHair>());
-        items.Add(ModContent.ItemType<TojisShirt>());
-        items.Add(ModContent.ItemType<TojisPants>());
-        items.Add(ModContent.ItemType<TojiWorm>());
+        ItemType<TojisHair>(),
+        ItemType<TojisShirt>(),
+        ItemType<TojisPants>(),
+        ItemType<TojiWorm>(),
 
         // True Sukuna
-        items.Add(ModContent.ItemType<TrueSukunaHair>());
-        items.Add(ModContent.ItemType<TrueSukunaBody>());
-        items.Add(ModContent.ItemType<TrueSukunaLegs>());
+        ItemType<TrueSukunaHair>(),
+        ItemType<TrueSukunaBody>(),
+        ItemType<TrueSukunaLegs>(),
 
         // Yuta
-        items.Add(ModContent.ItemType<YoungYutasHair>());
-        items.Add(ModContent.ItemType<YutasHair>());
-        items.Add(ModContent.ItemType<YutasShirt>());
-        items.Add(ModContent.ItemType<YutasPants>());
-        items.Add(ModContent.ItemType<YutasKatanaBag>());
+        ItemType<YoungYutasHair>(),
+        ItemType<YutasHair>(),
+        ItemType<YutasShirt>(),
+        ItemType<YutasPants>(),
+        ItemType<YutasKatanaBag>(),
 
         // Yuji
-        items.Add(ModContent.ItemType<YujikunaHair>());
-        items.Add(ModContent.ItemType<YujiSlickHair>());
-        items.Add(ModContent.ItemType<YujisShirt>());
-        items.Add(ModContent.ItemType<YujisPants>());
+        ItemType<YujikunaHair>(),
+        ItemType<YujiSlickHair>(),
+        ItemType<YujisShirt>(),
+        ItemType<YujisPants>()
+    };
 
 
-        // Add all recipes
-        foreach (int item in items) 
-        {
-            Recipe.Create(item)
-                .AddIngredient(ItemID.Silk)
-                .AddTile(TileID.Loom)
-                .Register();
-        }
+    // Add all recipes
+    foreach (int item in items) 
+    {
+        Recipe.Create(item)
+            .AddIngredient(ItemID.Silk)
+            .AddTile(TileID.Loom)
+            .Register();
     }
+}
 }
