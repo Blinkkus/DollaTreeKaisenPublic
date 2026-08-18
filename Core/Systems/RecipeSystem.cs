@@ -18,77 +18,77 @@ namespace NeviliscoVanity.Core.Systems;
 public class RecipeSystem : ModSystem
 {
     public override void AddRecipes()
-{
-    // Shorthand
-    static int ItemType<T>() where T : ModItem => ModContent.ItemType<T>();
-
-    List<int> items = new List<int>()
     {
-        // Gojo
-        ItemType<BlindfoldGojosHair>(),
-        ItemType<NoBlindfoldGojosHair>(),
-        ItemType<GojosHair>(),
-        ItemType<GojosShirt>(),
-        ItemType<GojosPants>(),
+        // Shorthand
+        static int ItemType<T>() where T : ModItem => ModContent.ItemType<T>();
 
-        // Ino
-        ItemType<InosBeanie>(),
-        ItemType<InosShiestyHelmet>(),
-        ItemType<InosShiestyAccessory>(),
-        ItemType<InosHair>(),
-        ItemType<InosShirt>(),
-        ItemType<InosPants>(),
+        List<int> items = new List<int>()
+        {
+            // Gojo
+            ItemType<BlindfoldGojosHair>(),
+            ItemType<NoBlindfoldGojosHair>(),
+            ItemType<GojosHair>(),
+            ItemType<GojosShirt>(),
+            ItemType<GojosPants>(),
 
-        // Past Geto
-        ItemType<PastGetosHair>(),
-        ItemType<PastGetosShirt>(),
-        ItemType<PastGetosPants>(),
+            // Ino
+            ItemType<InosBeanie>(),
+            ItemType<InosShiestyHelmet>(),
+            ItemType<InosShiestyAccessory>(),
+            ItemType<InosHair>(),
+            ItemType<InosShirt>(),
+            ItemType<InosPants>(),
 
-        // Past Gojo
-        ItemType<PastGojosHair>(),
-        ItemType<PastGojosShirt>(),
-        ItemType<PastGojosPants>(),
-        ItemType<PastGojosGlasses>(),
+            // Past Geto
+            ItemType<PastGetosHair>(),
+            ItemType<PastGetosShirt>(),
+            ItemType<PastGetosPants>(),
 
-        // Sukuna
-        ItemType<SukunasHair>(),
-        ItemType<SukunasShirt>(),
-        ItemType<SukunasPants>(),
-        ItemType<EightHandledWheel>(),
+            // Past Gojo
+            ItemType<PastGojosHair>(),
+            ItemType<PastGojosShirt>(),
+            ItemType<PastGojosPants>(),
+            ItemType<PastGojosGlasses>(),
 
-        // Toji
-        ItemType<TojisHair>(),
-        ItemType<TojisShirt>(),
-        ItemType<TojisPants>(),
-        ItemType<TojiWorm>(),
+            // Sukuna
+            ItemType<SukunasHair>(),
+            ItemType<SukunasShirt>(),
+            ItemType<SukunasPants>(),
+            ItemType<EightHandledWheel>(),
 
-        // True Sukuna
-        ItemType<TrueSukunaHair>(),
-        ItemType<TrueSukunaBody>(),
-        ItemType<TrueSukunaLegs>(),
+            // Toji
+            ItemType<TojisHair>(),
+            ItemType<TojisShirt>(),
+            ItemType<TojisPants>(),
+            ItemType<TojiWorm>(),
 
-        // Yuta
-        ItemType<YoungYutasHair>(),
-        ItemType<YutasHair>(),
-        ItemType<YutasShirt>(),
-        ItemType<YutasPants>(),
-        ItemType<YutasKatanaBag>(),
+            // True Sukuna
+            ItemType<TrueSukunaHair>(),
+            ItemType<TrueSukunaBody>(),
+            ItemType<TrueSukunaLegs>(),
 
-        // Yuji
-        ItemType<YujikunaHair>(),
-        ItemType<YujiSlickHair>(),
-        ItemType<YujisShirt>(),
-        ItemType<YujisPants>()
-    };
+            // Yuta
+            ItemType<YoungYutasHair>(),
+            ItemType<YutasHair>(),
+            ItemType<YutasShirt>(),
+            ItemType<YutasPants>(),
+            ItemType<YutasKatanaBag>(),
+
+            // Yuji
+            ItemType<YujikunaHair>(),
+            ItemType<YujiSlickHair>(),
+            ItemType<YujisShirt>(),
+            ItemType<YujisPants>()
+        };
 
 
-    // Add all recipes
-    foreach (int item in items) 
-    {
-        Recipe.Create(item)
-            .AddIngredient(ItemID.Silk)
-            .AddTile(TileID.Loom)
-            .Register();
+        // Add all recipes
+        foreach (int item in items) 
+        {
+            Recipe.Create(item)
+                .AddIngredient(ItemID.Silk)
+                .AddTile(TileID.Loom)
+                .Register();
+        }
     }
-}
 }
